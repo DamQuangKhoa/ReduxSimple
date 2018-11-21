@@ -1,9 +1,6 @@
 import React from "react";
 import Product from "./product";
-import Message from "./message";
-import Cart from "./cart";
-import { connect } from "react-redux";  
-class Products extends React.Component {
+class ProductList extends React.Component {
     /* jshint expr: true */
   constructor(props) {
     super(props);
@@ -30,14 +27,4 @@ showProduct = (products) =>{
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    products: state.products
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  null
-)(Products);
+export default ProductList;
