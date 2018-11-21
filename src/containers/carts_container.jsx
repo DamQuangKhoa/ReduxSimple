@@ -1,9 +1,9 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import  ProductList  from "../components/product_list";
+import  Cart  from "../components/cart";
 import PropTypes from 'prop-types';
-class ProductContainer extends React.Component {
+class CartsContainer extends React.Component {
   /* jshint expr: true */
   constructor(props) {
     super(props);
@@ -11,28 +11,26 @@ class ProductContainer extends React.Component {
   }
 
   render() {
-    var { products } = this.props;
+    var { carts } = this.props;
     return (
-     <ProductList products={products}  /> 
+     <Cart carts={carts}  /> 
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    products: state.products
+    carts: state.carts
   };
 };
-ProductContainer.propTypes = {
+CartsContainer.propTypes = {
   products : PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired,
-      inventory: PropTypes.number.isRequired,
+      amount: PropTypes.number.isRequired,
 
     })
   ).isRequired
@@ -40,4 +38,4 @@ ProductContainer.propTypes = {
 export default connect(
   mapStateToProps,
   null
-)(ProductContainer);
+)(CartsContainer);

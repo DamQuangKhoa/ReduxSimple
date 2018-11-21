@@ -8,7 +8,6 @@ class ProductList extends React.Component {
   }
 showProduct = (products) =>{
     var result = null;
-        console.log('abc')
     result = products.map((p, i) => {
         return <Product key = {i} product = {p} />
     })

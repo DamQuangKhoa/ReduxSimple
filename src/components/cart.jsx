@@ -6,7 +6,15 @@ class Cart extends React.Component {
     super(props);
     this.state = {};
   }
+showProduct = (carts) =>{
+    var result = null;
+    result = carts.map((p, i) => {
+        return <CartItem key = {i} cart = {p} />
+    })
+    return result;
+};
   render() {
+      var {carts} = this.props;
     return (
         <section className="section">
           <div className="table-responsive">
@@ -22,7 +30,7 @@ class Cart extends React.Component {
                 </tr>
               </thead>
               <tbody>
-              <CartItem />
+                  {this.showProduct(carts)}
              <CartResult />                
               </tbody>
             </table>
