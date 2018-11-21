@@ -6,11 +6,9 @@ class Message extends React.Component {
   }
   render() {
     return (
-      <React.Fragment>
         <h3>
           <span className="badge amber darken-2">Mua Hàng Thành Công !</span>
         </h3>
-      </React.Fragment>
     );
   }
 }
